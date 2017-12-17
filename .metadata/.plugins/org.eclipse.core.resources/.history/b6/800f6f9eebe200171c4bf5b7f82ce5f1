@@ -1,0 +1,12 @@
+public class Multiply {
+	public static void main(String[] args) {
+		// TODO Fill in your solution here
+		
+	}
+	public static float multiply (float x, float y){
+		float x = Float.parsefloat(args[0]);
+		float y = Float.parseFloat(arg[1]);
+		
+		return x * y;
+	}
+}

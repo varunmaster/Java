@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;java_first project in class&apos; to &apos;java_15&apos;" description="Rename resource &apos;java_first project in class&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/java_first project in class" name="java_15" stamp="1446761851502" updateReferences="true"/>
+</session>

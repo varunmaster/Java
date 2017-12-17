@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Homework1" basedir="."> 
+  <description>Ant buildfile for homework 3</description>
+
+  <property name="junit.jar" location="/usr/share/java/junit4.jar"/>
+
+  <property name="src" location="src"/>
+  <property name="test" location="test"/>
+  <property name="bin" location="bin"/>
+  <property name="log" location="log"/>
+
+  <path id="classpath">
+    <pathelement path="${junit.jar}"/>
+    <pathelement location="${bin}"/>
+  </path>
+
+  <target name="init">
+    <mkdir dir="${bin}"/>
+    <mkdir dir="${log}"/>
+  </target>
+
+  <target name="compile" depends="init">
+    <javac includeantruntime="false" srcdir="${src}" destdir="${bin}" classpathref="classpath"/>
+    <javac includeantruntime="false" srcdir="${test}" destdir="${bin}" classpathref="classpath"/>
+  </target>
+
+  <target name="test" depends="compile">
+    <junit printsummary="yes" haltonerror="no" fork="yes" forkmode="perBatch">
+      <classpath refid="classpath"/>
+      <formatter type="xml"/>
+      <batchtest todir="${log}">
+        <fileset dir="${test}">
+          <include name="**/*Test.java"/>
+          <include name="**/*TestExtra.java"/>
+          <exclude name="**/*TestBase.java"/>
+        </fileset>
+      </batchtest>
+    </junit>
+  </target>
+</project>
